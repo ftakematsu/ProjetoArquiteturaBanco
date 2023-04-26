@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author aluno
- *
- */
-module ProjetoArquiteturaBanco {
-}

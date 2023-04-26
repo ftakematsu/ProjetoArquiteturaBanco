@@ -1,7 +1,6 @@
-package modules;
+package modules.admin;
 
 import java.util.Scanner;
-
 import consts.CodigoLogin;
 import controller.AdminController;
 
@@ -23,6 +22,7 @@ public class AdminLoginModule {
 		switch (responseLogin) {
 			case SUCESSO:
 				System.out.println("Login realizado com sucesso!");
+				GestaoUsuarioModule.menu();
 				break;
 			case ERRO_USUARIO:
 				System.out.println("Usuário não encontrado!");
