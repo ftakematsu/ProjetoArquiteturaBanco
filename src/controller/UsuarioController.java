@@ -16,10 +16,30 @@ public class UsuarioController {
 	
 	public void listar() {
 		for (Usuario user : lista) {
-			System.out.println(" - Nome: " + user.getNome());
-			System.out.println(" - E-mail: " + user.getEmail());
-			System.out.println(" - CPF: " + user.getCpf());
+			// Princípio Tell dont ask
+			user.gerarRelatorio();
 		}
 	}
+	
+	public Usuario buscar(String cpf) {
+		for (Usuario user : lista) {
+			if (user.getCpf().equals(cpf)) { // Achou
+				return user;
+			}
+		}
+		return null; // Caso o usuário não tenha sido encontrado
+	}
+	
+	public ArrayList<Usuario> buscarPorNome(String nome) {
+		ArrayList<Usuario> lista = new ArrayList<>();
+		for (Usuario user : lista) {
+			if (user.getNome().contains(nome)) { // Achou
+				lista.add(user);
+			}
+		}
+		return lista;
+	}
+	
+	
 	
 }

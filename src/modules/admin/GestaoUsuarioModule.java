@@ -16,6 +16,7 @@ public class GestaoUsuarioModule {
 			System.out.println("\nGESTÃO DE USUÁRIOS");
 			System.out.println("(1) Cadastrar usuário");
 			System.out.println("(2) Listar usuários");
+			System.out.println("(3) Buscar um usuário");
 			System.out.println("(0) Sair do painel administrativo");
 			System.out.print("OPÇÃO: ");
 			opcao = scan.nextInt();
@@ -25,6 +26,9 @@ public class GestaoUsuarioModule {
 					break;
 				case 2:
 					listarUsuario();
+					break;
+				case 3:
+					buscarUsuario();
 					break;
 				case 0:
 					System.out.println("Saindo...");
@@ -56,6 +60,21 @@ public class GestaoUsuarioModule {
 			case ERRO:
 				System.err.println("Ocorreu um erro");
 				break;
+		}
+	}
+	
+	public static void buscarUsuario() {
+		scan.nextLine();
+		System.out.print(" - CPF (somente números): ");
+		String cpf = scan.nextLine();
+		
+		Usuario user = controller.buscar(cpf);
+		if (user!=null) { // Se o usuário foi encontrado
+			// Princípio Tell dont ask
+			user.gerarRelatorio();
+		}
+		else {
+			System.err.println("Usuário não encontrado!");
 		}
 	}
 	

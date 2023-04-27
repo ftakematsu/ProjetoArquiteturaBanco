@@ -35,6 +35,15 @@ public class Usuario {
 		this.cpf = cpf;
 	}
 	
+	/**
+	 * Geração do relatório usando o princípio tell dont ask
+	 */
+	public void gerarRelatorio() {
+		System.out.println(" - Nome: " + this.getNome());
+		System.out.println(" - E-mail: " + this.getEmail());
+		System.out.println(" - CPF: " + this.getCpf());
+		System.out.println();
+	}
 	
 	
 }
