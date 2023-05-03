@@ -11,6 +11,14 @@ public class Admin {
 		this.senha = senha;
 	}
 	
+	public String getLogin() {
+		return login;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
 	/**
 	 * Valida o login.
 	 * 0 - sucesso, 1 - usuário incorreto, 2 - senha incorreta

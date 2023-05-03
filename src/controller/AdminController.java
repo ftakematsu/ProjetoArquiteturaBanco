@@ -1,9 +1,15 @@
 package controller;
 
+import java.sql.SQLException;
+
 import consts.CodigoLogin;
+import database.AdminDAO;
 import model.Admin;
 
 public class AdminController {
+	
+	AdminDAO dao = new AdminDAO();
+	
 	/**
 	 * Controller da autenticação do usuário
 	 * @param login nome de usuário fornecido
@@ -11,9 +17,16 @@ public class AdminController {
 	 * @return objeto enum do tipo CodigoLogin
 	 */
 	public CodigoLogin autenticar(String login, String senha) {
-		// TODO obter os dados das credenciais de um banco de dados
-		Admin admin = new Admin("admin", "1234");
 		Admin user = new Admin(login, senha);
-		return user.validar(admin);
+		boolean autenticado;
+		try {
+			autenticado = dao.autenticar(user);
+			return (autenticado) ? CodigoLogin.SUCESSO : CodigoLogin.OUTRO_ERRO;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return CodigoLogin.SUCESSO;
 	}
 }
