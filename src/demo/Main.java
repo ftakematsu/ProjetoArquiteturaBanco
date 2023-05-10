@@ -22,7 +22,6 @@ public class Main {
 					connection.prepareStatement(sql);
 			ResultSet result = statement.executeQuery();
 			
-			
 			result.next();
 			System.out.println("tamanho = " + result.getRow());
 			if (result.getRow()>0)

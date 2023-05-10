@@ -1,17 +1,20 @@
 package controller;
 
 import java.util.ArrayList;
-
 import consts.CodigoCadastro;
+import database.UsuarioDAO;
 import model.Usuario;
 
 public class UsuarioController {
 	
 	ArrayList<Usuario> lista = new ArrayList<>();
+	UsuarioDAO dao = new UsuarioDAO();
 	
 	public CodigoCadastro cadastrar(Usuario user) {
-		lista.add(user);
-		return CodigoCadastro.SUCESSO;
+		//lista.add(user);
+		CodigoCadastro retorno;
+		retorno = dao.inserir(user);
+		return retorno;
 	}
 	
 	public void listar() {
