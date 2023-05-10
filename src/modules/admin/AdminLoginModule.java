@@ -12,9 +12,9 @@ public class AdminLoginModule {
 		AdminController adminController = new AdminController();
 		
 		System.out.print("Login: ");
-		login = scan.next();
+		login = scan.nextLine();
 		System.out.print("Senha: ");
-		senha = scan.next();
+		senha = scan.nextLine();
 		
 		CodigoLogin responseLogin;
 		responseLogin = adminController.autenticar(login, senha);

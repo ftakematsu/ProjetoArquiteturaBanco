@@ -19,14 +19,7 @@ public class AdminController {
 	public CodigoLogin autenticar(String login, String senha) {
 		Admin user = new Admin(login, senha);
 		boolean autenticado;
-		try {
-			autenticado = dao.autenticar(user);
-			return (autenticado) ? CodigoLogin.SUCESSO : CodigoLogin.OUTRO_ERRO;
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return CodigoLogin.SUCESSO;
+		autenticado = dao.autenticar(user);
+		return (autenticado) ? CodigoLogin.SUCESSO : CodigoLogin.OUTRO_ERRO;
 	}
 }
