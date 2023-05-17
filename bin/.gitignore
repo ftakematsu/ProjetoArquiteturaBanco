@@ -1,4 +1,9 @@
-/demo/
-/database/
+/AllTests.class
+/consts/
 /controller/
+/database/
+/demo/
+/exceptions/
+/model/
 /modules/
+/view/

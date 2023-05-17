@@ -1,5 +1,8 @@
 package model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Usuario {
 	private String nome;
 	private String email;
@@ -44,6 +47,16 @@ public class Usuario {
 		System.out.println(" - CPF: " + this.getCpf());
 		System.out.println();
 	}
+	
+	public static Usuario fromResultSet(ResultSet result) throws SQLException {
+		return new Usuario(
+				result.getString("nome"), 
+				result.getString("email"), 
+				result.getString("cpf")
+		);
+				
+	}
+	
 	
 	
 }
