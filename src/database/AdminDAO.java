@@ -12,7 +12,7 @@ public class AdminDAO extends DAO {
 		String u=admin.getLogin(), s=admin.getSenha();
 		String sql = "select * from administrador "
 				+ "where usuario=? and senha=?";
-		System.out.println(sql);
+		//System.out.println(sql);
 		PreparedStatement statement;
 		try {
 			// Cria uma string SQL parametrizada

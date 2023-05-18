@@ -1,13 +1,15 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import consts.CodigoCadastro;
 import database.UsuarioDAO;
 import model.Usuario;
 
 public class UsuarioController {
 	
-	ArrayList<Usuario> lista = new ArrayList<>();
+	List<Usuario> lista = new ArrayList<>();
 	UsuarioDAO dao = new UsuarioDAO();
 	
 	public CodigoCadastro cadastrar(Usuario user) {
@@ -18,6 +20,7 @@ public class UsuarioController {
 	}
 	
 	public void listar() {
+		lista = dao.buscarTodos();
 		for (Usuario user : lista) {
 			// Princípio Tell dont ask
 			user.gerarRelatorio();

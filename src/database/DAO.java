@@ -26,4 +26,14 @@ public abstract class DAO {
 			System.err.println(e.getMessage());
 		}
 	}
+	
+	
+	public void fechar() {
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			System.err.println("Erro ao fechar a conexão");
+		}
+	}
+	
 }

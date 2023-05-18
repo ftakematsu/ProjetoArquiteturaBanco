@@ -45,6 +45,19 @@ public class UsuarioDAO extends DAO {
 		
 	}
 	
+	public List<Usuario> buscarPorCpf(String cpf) {
+		// TODO implementar o método
+		return null;
+	}
+	
+	public boolean alterar(Usuario usuario) {
+		// TODO implementar o método
+		String sql = "UPDATE usuario SET "
+				+ "nome=?, email=? "
+				+ "WHERE cpf=?";	
+		// TODO continuar...
+		return true;
+	}
 	
 	
 	
